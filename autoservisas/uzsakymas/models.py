@@ -1,5 +1,7 @@
 from django.db import models
-from automobilis_id.models import automobilis
+
+import automobilis
+
 
 # Create your models here.
 
@@ -7,8 +9,7 @@ class Uzsakymas(models.Model):
 
     data = models.CharField(max_length=255)
     automobilis_id = models.ForeignKey(
-        automobilis,
-
+        automobilis, on_delete=models.CASCADE
     )
     suma = models.IntegerField()
 
@@ -18,11 +19,8 @@ class Paslauga (models.Model):
     kaina = models.IntegerField()
 
 class Uzsakymo_eilute (models.Model):
-    Paslauga = models.ForeignKey(Paslauga)
-    Uzsakymas = models.ForeignKey(Uzsakymas)
+
+    Paslauga = models.ForeignKey(Paslauga, on_delete=models.CASCADE)
+    Uzsakymas = models.ForeignKey(Uzsakymas, on_delete=models.CASCADE)
     Kiekis = models.CharField(max_length=255)
     Kaina = models.CharField(max_length=255)
-
-
-
-
