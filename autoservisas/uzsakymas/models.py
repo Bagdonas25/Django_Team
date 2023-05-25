@@ -9,6 +9,7 @@ class Uzsakymas(models.Model):
 
     data = models.CharField(max_length=255)
     automobilis_id = models.ForeignKey(
+
         automobilis, on_delete=models.CASCADE
     )
     suma = models.IntegerField()
