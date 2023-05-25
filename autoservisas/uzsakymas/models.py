@@ -1,6 +1,6 @@
 from django.db import models
 
-import automobilis
+from automobilis.models import Automobilis
 
 
 # Create your models here.
@@ -8,9 +8,7 @@ import automobilis
 class Uzsakymas(models.Model):
 
     data = models.CharField(max_length=255)
-    automobilis_id = models.ForeignKey(
-
-        automobilis, on_delete=models.CASCADE
+    automobilis_id = models.ForeignKey(Automobilis, on_delete=models.CASCADE
     )
     suma = models.IntegerField()
 
