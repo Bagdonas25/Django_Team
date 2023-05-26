@@ -5,6 +5,10 @@ from uzsakymas.models import Uzsakymas, Paslauga, Uzsakymo_eilute
 
 
 # Register your models here.
+class AutomobilisAdmin(admin.ModelAdmin):
+    list_display = [
+        
+    ]
 class Automobilis_Admin(admin.ModelAdmin):
 
     list_display = ['Valstybinis_NR',
