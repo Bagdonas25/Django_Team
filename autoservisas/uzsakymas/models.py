@@ -12,12 +12,12 @@ class Uzsakymas(models.Model):
     )
     suma = models.IntegerField()
 
+class Paslauga(models.Model):
 
-class Paslauga (models.Model):
     pavadinimas = models.CharField(max_length=255)
     kaina = models.IntegerField()
 
-class Uzsakymo_eilute (models.Model):
+class Uzsakymo_eilute(models.Model):
 
     Paslauga = models.ForeignKey(Paslauga, on_delete=models.CASCADE)
     Uzsakymas = models.ForeignKey(Uzsakymas, on_delete=models.CASCADE)

@@ -5,8 +5,11 @@ class Automobilio_modelis(models.Model):
     Marke = models.CharField(max_length=100)
     Modelis = models.CharField(max_length=100)
 
+    def __str__(self):
+        return f"{self.Marke} {self.Modelis}"
 
-class Automobilis (models.Model):
+
+class Automobilis(models.Model):
 
     Valstybinis_NR = models.CharField (max_length=6, help_text="ABC123")
     Automobilio_modelis_id = models.ForeignKey (Automobilio_modelis,
@@ -14,4 +17,11 @@ class Automobilis (models.Model):
     )
     VIN_kodas = models.CharField (max_length=30)
     klientas = models.CharField (max_length=100)
+
+    def __str__(self):
+        return f"{self.Valstybinis_NR}" \
+               f" {self.Automobilio_modelis_id}" \
+               f" {self.VIN_kodas} " \
+               f"{self.klientas}"
+
 
